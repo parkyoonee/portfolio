@@ -18,9 +18,13 @@
     <script>
         $(function(){
     $('#main_nav li').mouseover(function(){
-        $('.sub_nav').stop().fadeIn(500)
+        $('.sub_nav').stop().fadeIn()
+        $('.nav_bg').stop().fadeIn()
+        $('header').addClass('nav_scroll')
     }).mouseout(function(){
-        $('.sub_nav').stop().fadeOut(500)
+        $('.sub_nav').stop().fadeOut()
+        $('.nav_bg').stop().fadeOut()
+        // $('header').removeClass('nav_scroll')
     })
 })
     </script>
@@ -108,13 +112,29 @@
             })
         })
     </script>
+
+    <script>
+        $(window).scroll(function(){
+          var scrollTop = $(window).scrollTop();
+          if(scrollTop != 0) $('header').addClass('nav_scroll')
+                            //  $('.scroll_img').css('display', block);
+          else $('header').removeClass('nav_scroll');
+      });
+    //   $(window).scroll(function(){
+    //       var scrollTop = $(window).scrollTop();
+    //       if(scrollTop != 0) $('#logo').addClass('scroll_img')
+    //       else $('#logo').removeClass('scroll_img');
+    //   });
+    </script>
 </head>
 <body>
     <div id="wrap">
         <header>
             <nav>
                 <div id="logo">
-                    <h1>POSCO</h1>
+                    <!-- <h1>POSCO</h1> -->
+                    <a href="web4.html"><img src="img/posco31.png" class="kk"></a>
+                    <!-- <a href="web4.html" class="scroll_img"><img src="img/posco31_3.png" ></a> -->
                 </div>
                 <ul id="main_nav">
                     <li><a href="#">회사소개</a>
@@ -163,7 +183,7 @@
                         <ul class="sub_nav">
                             <li><a href="#">비윤리 신고</a></li>
                             <li><a href="#">갑질행위 신고</a></li>
-                            <li><a href="#">직장 내 괴롭힘, 성희로<br>상담 및 신고</a></li>
+                            <li><a href="#">직장 내 괴롭힘, 성희롱<br> 상담 및 신고</a></li>
                             <li><a href="#">공정거래 상담 및 신고</a></li>
                             <li><a href="#">윤리딜레마 상담</a></li>
                         </ul>
@@ -180,16 +200,19 @@
                     </li>
                 </ul>
             </nav>
+            <div class="nav_bg">
+            </div>
         </header>
         <main>
             <section id="section1">
-                <video src="img/posco1.mp4" autoplay muted loop></video>
+                <video src="img/posco1.mp4" autoplay muted loop class="sec1_mp4"></video>
                 <div id="viewmore">
                     <a href="#section2"><p>View More</p>
                     <i class="fa-solid fa-chevron-down"></i></a>
                 </div>
                 <div id="#pause">
-                    <i class="fa-solid fa-circle-pause"></i>
+                    <i class="fa-solid fa-circle-pause stop"></i>
+                    <i class="fa-solid fa-circle-play play"></i>
                 </div>
             </section>
             <section id="section2">
@@ -430,7 +453,7 @@
                     <h2>POSCO의 최신소식을 가장 빠르게 전해드립니다.</h2>
                     <div id="sec5_list">
                         <ul id="main_list">
-                            <li class="list_on"><a href="#">프레스룸</a>
+                            <li class="list_on"><a href="#section5">프레스룸</a>
                                 <div>
                                     <ul>
                                         <li><a href="#">
@@ -456,7 +479,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">Greenate</a>
+                            <li><a href="#section5">Greenate</a>
                                 <div>
                                     <ul>
                                         <li><a href="#">
@@ -482,7 +505,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">HyREX</a>
+                            <li><a href="#section5">HyREX</a>
                                 <div>
                                     <ul>
                                         <li><a href="#">
@@ -508,7 +531,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">기업시민</a>
+                            <li><a href="#section5">기업시민</a>
                                 <div>
                                     <ul>
                                         <li><a href="#">
@@ -539,23 +562,101 @@
                 </div>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div id="footer_box1">
+                <div>
+                    <a href="web4.html"><img src="img/posco31.png"></a>
+                </div>
+                <div class="footer1">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">탄소중립</a></li>
+                        <li><a href="#">제품</a></li>
+                        <li><a href="#">기업시민/ESG</a></li>
+                        <li><a href="#">재무정보</a></li>
+                        <li><a href="#">홍보채널</a></li>
+                    </ul>
+                </div>
+                <div class="footer1">
+                    <h1 style="font-weight: 800;">고객지원</h1>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">업무별 연락처</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">일일방문신청</a></li>
+                    </ul>
+                </div>
+                <div class="footer1">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fab fa-facebook-f"></i></a>
+                </div>
+                <div class="footer1">
+                    <select name="" id="">
+                        <option value="">포스코그룹 바로가기</option>
+                        <option value="">포스코 홀딩스</option>
+                    </select>
+                </div>
+            </div>
+            <div id="footer_box2">
+                <div id="footer_box2_wrap">
+                    <div>
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">영상정보처리기기 운영관리 방침</a></li>
+                            <li><a href="#">이메일주소무단수집거부</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">제증명발급확인</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>(우)37859, 경상북도 포항시 남구 동해안로 6261(포항시 남구 괴동동1)</p>
+                        <p>대표전화: 054-220-0114, 02-3457-0114</p>
+                        <p>Copyrights(C) 2023 POSCO. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
       var swiper = new Swiper(".mySwiper", {
-      cssMode: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
       loop: true,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+       autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-    //   pagination: {
-    //     el: ".swiper-pagination",
-    //   },
-      mousewheel: true,
-      keyboard: true,
     });
+
+    </script>
+
+    <script>
+
+        document.querySelector('.stop').addEventListener('click', function(){
+            document.querySelector('.sec1_mp4').pause();
+            document.querySelector('.play').style.display = 'block'
+            document.querySelector('.stop').style.display = 'none'
+        })
+        document.querySelector('.play').addEventListener('click', function(){
+            document.querySelector('.sec1_mp4').play();
+            document.querySelector('.play').style.display = 'none'
+            document.querySelector('.stop').style.display = 'block'
+        })
 
     </script>
 </body>
