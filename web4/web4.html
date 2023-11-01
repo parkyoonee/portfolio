@@ -14,16 +14,23 @@
     <!--기본css-->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="web4.css">
+    <link rel="stylesheet" href="web4_slider.css">
+
+    <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=v3.11.3'></script>
+    <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
 
     <script>
         $(function(){
     $('#main_nav li').mouseover(function(){
-        $('.sub_nav').stop().fadeIn()
-        $('.nav_bg').stop().fadeIn()
+        $('.sub_nav').stop().fadeIn(500)
+        $(this).find('.sub_nav').css('background', '#0070bb')
+        $('.nav_bg').stop().fadeIn(500)
         $('header').addClass('nav_scroll')
     }).mouseout(function(){
-        $('.sub_nav').stop().fadeOut()
-        $('.nav_bg').stop().fadeOut()
+        $('.sub_nav').stop().fadeOut(1000)
+        $(this).find('.sub_nav').css('background', 'none')
+        $('.nav_bg').stop().fadeOut(1000)
         // $('header').removeClass('nav_scroll')
     })
 })
@@ -110,6 +117,15 @@
             $('#sec4_text li:eq(3)').click(function(){
                 $('.aside:eq(3)').fadeIn(500)
             })
+
+            $('.menubar').click(function(){
+                $('#appmenu').fadeIn(500)
+                $('header').fadeOut(500)
+            })
+            $('.close').click(function(){
+                $('#appmenu').fadeOut(500)
+                $('header').fadeIn(500)
+            })
         })
     </script>
 
@@ -183,7 +199,8 @@
                         <ul class="sub_nav">
                             <li><a href="#">비윤리 신고</a></li>
                             <li><a href="#">갑질행위 신고</a></li>
-                            <li><a href="#">직장 내 괴롭힘, 성희롱<br> 상담 및 신고</a></li>
+                            <li><a href="#">직장 내 괴롭힘 신고</a></li>
+                            <li><a href="#">직장 내 성희롱 신고</a></li>
                             <li><a href="#">공정거래 상담 및 신고</a></li>
                             <li><a href="#">윤리딜레마 상담</a></li>
                         </ul>
@@ -199,8 +216,9 @@
                         </ul>
                     </li>
                 </ul>
+                <i class="fas fa-bars menubar"></i>
             </nav>
-            <div class="nav_bg">
+            <div class="nav_bg"><img src="img/posco31_3.png">
             </div>
         </header>
         <main>
@@ -345,7 +363,73 @@
                 <div id="sec3_text">
                     <h1>포스코 ESG 실천활동</h1>
                 </div>
-                <div class="swiper mySwiper sec3">
+<div class="main-content">
+    <div class="recipe-wrapper">
+      <div class="navigation"><i class="js-navigate js-left disabled icon-arrow-left-circle icons"></i><i class="js-navigate js-right icon-arrow-right-circle icons"></i></div>
+      <div class="recipe-image">
+        <div class="recipe active"><img class="pie-photo" src="img/posco11_2.jpg"/></div>
+        <div class="recipe"><img class="pie-photo" src="img/posco12.jpg"/></div>
+        <div class="recipe"><img class="pie-photo" src="img/posco13_2.jpg"/></div>
+        <div class="recipe"><img class="pie-photo" src="img/posco14.jpg"/></div>
+      </div>
+      <div class="recipe-content">
+        <div class="recipe active blue">
+          <div class="recipe-page">1/4</div>
+          <div class="recipe-content-inner">
+            <h1 class="pie-name">전력</h1>
+            <div class="pie-serving">
+              <p>인천복합화력발전소(2호기)</p>
+            </div>
+            <div class="pie-context">발전 및 전력제어사업은 전기를 생산하여 공급 하는 설비를 건설하는 사업이며, 
+                당사는 원자력 및 신재생에너지의 청정에너지 사업과 고효율 친환경 화력 발전사업을 통해 
+                지속가능한 국가 발전사업에 기여하고 있습니다.</div>
+            <div class="pie-cta">바로가기</div>
+          </div>
+        </div>
+        <div class="recipe">
+          <div class="recipe-page">2/4</div>
+          <div class="recipe-content-inner">
+            <h1 class="pie-name">건축</h1>
+            <div class="pie-serving">
+              <p>그랑서울</p>
+            </div>
+            <div class="pie-context">POSCO는 Brand Power와 기술력을 바탕으로 소비자에게 
+                최고 주거공간을 제공하고 있으며, 지속적인 원가혁신을 통해 
+                가격경쟁력을 확보하고 있습니다.</div>
+            <div class="pie-cta">바로가기</div>
+          </div>
+        </div>
+        <div class="recipe orange">
+          <div class="recipe-page">3/4</div>
+          <div class="recipe-content-inner">
+            <h1 class="pie-name">인프라</h1>
+            <div class="pie-serving">
+              <p>Thomson-East Coast Line Contrac...</p>
+            </div>
+            <div class="pie-context">POSCO는 인프라산업 분야에서 다수의 도로, 철도, 수자원, 항만, 단지, 지하 저장시설 등의 
+                사회인프라 건설을 수행 하였으며, 
+                민간자본을 이용한 대규모 인프라를 건설하고 운영하는 높은 경쟁력을 확보하고 있습니다.</div>
+            <div class="pie-cta">바로가기</div>
+          </div>
+        </div>
+        <div class="recipe yellow">
+          <div class="recipe-page">4/4</div>
+          <div class="recipe-content-inner">
+            <h1 class="pie-name">레저</h1>
+            <div class="pie-serving">
+              <p>엘리시안 강촌/제주</p>
+            </div>
+            <div class="pie-context">
+                POSCO는 문화ㆍ예술 공연, 대규모 전시행사를 완벽하게 수행할 수 있는 
+                각종 문화시설과 고품격 호텔 및 레져시설, 체육관 메인스타디움 등 
+                복합스포츠시설 시공에서도 뛰어난 기술력과 풍부한 노하우를 축적하고 있습니다.</div>
+            <div class="pie-cta">바로가기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                <!-- <div class="swiper mySwiper sec3">
                     <div class="swiper-wrapper sec3_1">
                       <div class="swiper-slide sec3_2">
                         <div>
@@ -444,8 +528,8 @@
                     </div>
                     <div class="swiper-button-next" style="color: #005891; font-weight: 800;"></div>
                     <div class="swiper-button-prev" style="color: #005891; font-weight: 800;"></div>
-                    <!-- <div class="swiper-pagination"></div> -->
-                  </div>
+                    <div class="swiper-pagination"></div>
+                  </div> -->
             </section>
             <section id="section5">
                 <div id="sec5_wrap">
@@ -468,7 +552,7 @@
                                         </a></li>
                                         <li><a href="#">
                                             <img src="img/posco17.jpg">
-                                            <h1>최정우 세계철강협회장 정기회의 주재… 글로벌 철강 리더들과...</h1>
+                                            <h1>최정우 세계철강협회장 정기회의 주재… 글로벌 철강 리더...</h1>
                                             <p>2023-10-17</p>
                                         </a></li>
                                         <li><a href="#">
@@ -510,12 +594,12 @@
                                     <ul>
                                         <li><a href="#">
                                             <img src="img/posco22.jpg">
-                                            <h1>포스코그룹 7대 사업 속으로 ④ 수소 편</h1>
+                                            <h1>[SMK 2023 현장 취재]포스코그룹 7대 사업 속으로 ④ 수소 편</h1>
                                             <p>2023-09-26</p>
                                         </a></li>
                                         <li><a href="#">
                                             <img src="img/posco23.jpg">
-                                            <h1>[H2 MEET 2023] 현장 취재! 포스코그룹 수소사업 밸류체인의...</h1>
+                                            <h1>현장 취재! 포스코그룹 수소사업 밸류체인의...</h1>
                                             <p>2023-09-18</p>
                                         </a></li>
                                         <li><a href="#">
@@ -525,7 +609,7 @@
                                         </a></li>
                                         <li><a href="#">
                                             <img src="img/posco25.jpg">
-                                            <h1>포스코TV <알신포> 시즌2 1편 미래 제철소 모습이 궁금해? 뉴스룸...</h1>
+                                            <h1>포스코TV <알신포> 시즌2 1편 미래 제철소 모습이 궁금해?</h1>
                                             <p>2023-06-22</p>
                                         </a></li>
                                     </ul>
@@ -536,7 +620,7 @@
                                     <ul>
                                         <li><a href="#">
                                             <img src="img/posco27.jpg">
-                                            <h1>크라카타우포스코, 인도네시아 기술대·특성화고에 철강교육 과정</h1>
+                                            <h1>크라카타우포스코, 인도네시아 기술대·특성화고에 철강교육...</h1>
                                             <p>2023-09-26</p>
                                         </a></li>
                                         <li><a href="#">
@@ -564,7 +648,7 @@
         </main>
         <footer>
             <div id="footer_box1">
-                <div>
+                <div class="footerlogo">
                     <a href="web4.html"><img src="img/posco31.png"></a>
                 </div>
                 <div class="footer1">
@@ -577,7 +661,7 @@
                         <li><a href="#">홍보채널</a></li>
                     </ul>
                 </div>
-                <div class="footer1">
+                <div class="footer2">
                     <h1 style="font-weight: 800;">고객지원</h1>
                     <ul>
                         <li><a href="#">공지사항</a></li>
@@ -588,12 +672,12 @@
                         <li><a href="#">일일방문신청</a></li>
                     </ul>
                 </div>
-                <div class="footer1">
+                <div class="footer3">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fab fa-facebook-f"></i></a>
                 </div>
-                <div class="footer1">
+                <div class="footer4">
                     <select name="" id="">
                         <option value="">포스코그룹 바로가기</option>
                         <option value="">포스코 홀딩스</option>
@@ -622,6 +706,81 @@
             </div>
         </footer>
     </div>
+    <div id="appmenu">
+        <i class="fa-solid fa-x close"></i>
+        <div id="applogo">
+            <img src="img/posco31_3.png">
+        </div><hr>
+        <div id="appnav">
+            <ul id="appmain_nav">
+                <li><a href="#">회사소개</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">비전</a></li>
+                        <li><a href="#">대표이사 메시지</a></li>
+                        <li><a href="#">역사</a></li>
+                        <li><a href="#">네트워크</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">탄소중립</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">탄소중립 전략</a></li>
+                        <li><a href="#">Greenate</a></li>
+                        <li><a href="#">HyREX</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">기업시민/ESG</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">기업시민</a></li>
+                        <li><a href="#">ESG 경영</a></li>
+                        <li><a href="#">ESG 보고서</a></li>
+                        <li><a href="#">이니셔티브 및 인증/수상</a></li>
+                        <li><a href="#">컨트로버시</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">재무정보</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">감사보고서</a></li>
+                        <li><a href="#">사업보고서</a></li>
+                        <li><a href="#">전자공고</a></li>
+                        <li><a href="#">재무상태표</a></li>
+                        <li><a href="#">손익계산서</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">홍보채널</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">포스코 뉴스룸</a></li>
+                        <li><a href="#">포스코 CI</a></li>
+                        <li><a href="#">포스코역사관</a></li>
+                        <li><a href="#">문화행사</a></li>
+                        <li><a href="#">견학신청</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">신고센터</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">비윤리 신고</a></li>
+                        <li><a href="#">갑질행위 신고</a></li>
+                        <li><a href="#">직장 내 괴롭힘 신고</a></li>
+                        <li><a href="#">직장 내 성희롱 신고</a></li>
+                        <li><a href="#">공정거래 상담 및 신고</a></li>
+                        <li><a href="#">윤리딜레마 상담</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">고객지원</a><hr class="zz">
+                    <ul class="appsub_nav">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">업무별 연락처</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.console = window.console || function(t) {};
+      </script>      
 
     <script>
       var swiper = new Swiper(".mySwiper", {
@@ -657,6 +816,37 @@
             document.querySelector('.play').style.display = 'none'
             document.querySelector('.stop').style.display = 'block'
         })
+
+    </script>
+
+    <script>
+        $(".js-navigate").on("click", function() {
+  $(".js-navigate").removeClass("disabled");
+  var current = $(".recipe.active");
+  var findNext = $(current).next(".recipe");
+  var findPrev = $(current).prev(".recipe");
+  var button = $(this);
+
+  $(current).removeClass("active");
+  setTimeout(function() {
+    if ($(button).hasClass("js-right")) {
+      $(findNext).addClass("active");
+      checkForDisable();
+    } else if ($(button).hasClass("js-left")) {
+      $(findPrev).addClass("active");
+      checkForDisable();
+    }
+  }, 300);
+});
+
+function checkForDisable() {
+  var current = $(".recipe.active");
+  if ($(current).is(".recipe:last")) {
+    $(".js-right").addClass("disabled");
+  } else if ($(current).is(".recipe:first")) {
+    $(".js-left").addClass("disabled");
+  }
+}
 
     </script>
 </body>
