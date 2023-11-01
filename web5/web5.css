@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* @font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+*{color: inherit;}
+
+#wrap{
+    width: 100%;
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+header{
+    width: 100%;
+    background: #25303c;
+    background: linear-gradient(90deg, #313841 0%, #13191f 100%);
+    color: white;
+    border-bottom: 1px solid #888;
+}
+header #smallmenu{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    height: 10px;
+}
+header #smallmenu div{width: 50%;}
+header #smallmenu ul li{display: inline-block; font-size: 0.8rem; margin: 0 2.5%; color:#888;}
+header #smallmenu ul li:hover{text-decoration: underline;}
+nav{
+    width: 70%; height: 70px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+}
+header nav #navmenu{
+    width: 33.3333%;
+}
+header nav #navmenu ul a li{
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 90px;
+    padding: 0 5%;
+}
+#logo{text-align: center;}
+#logo img{
+    width: 100%;
+    height: 70%;
+    margin-top: 8%;
+}
+header nav #navdetail{
+    width: 33.333%;
+    text-align: right;
+}
+header nav #navdetail ul li{
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0 4%;
+    line-height: 90px;
+    cursor: pointer;
+}
+/* .line{width: 100%;} */
+
+
+main #section1{
+    --slides-per-page: 2;
+    margin: 0;
+    overflow: hidden;
+    height: calc(100vh - 80px);
+    color: white;
+    background: #25303c;
+    background: linear-gradient(90deg, #313841 0%, #13191f 100%);
+    /* background: url(img/cgv1.jpg) no-repeat; background-size: cover; */
+}
+main #section1 h1{text-align: center; font-size: 1.8rem; padding-top: 3%; border-bottom: 2px solid #888; width: 6%; margin: 0 auto;}
